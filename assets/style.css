@@ -18,6 +18,9 @@ header{
     flex-wrap: wrap;
     justify-content:center;
 }
+main{
+    display: flex;
+}
 .highscores{
     flex: 1;
     padding: 20px;
@@ -38,13 +41,17 @@ header{
 .question-block h2{
     color: black;
     padding: 20px;
+    width: 100%;
+    font-size: 50px;
+}
+.question {
+    margin: auto;
 }
 .instructions{
     padding: 20px;
 }
 .begin-quiz-btn{
     background-color: var(--primary);
-  
     color: white;
     border-radius: 12px;
     outline: none;
@@ -57,4 +64,28 @@ header{
     box-shadow: 0 0px var(--secondary);
     top: 0;
     border: none;
+}
+.possible-answers{
+    list-style-type: none;
+    text-decoration: none;
+}
+.possible-answers li{
+    list-style-type: none;
+    width:100%;
+    background-color: var(--primary);
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 50px;
+    color: black;
+    background-color: var(--primary);
+    border-radius: 15%;
+    border: 1px solid black;
+    cursor: pointer;
+    outline: none;
+}
+
+.possible-answers a:active{
+    box-shadow: 0 0px var(--secondary);
+    top: 0;
+    border: none; 
 }
