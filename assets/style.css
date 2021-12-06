@@ -42,12 +42,19 @@ header{
 .instructions{
     padding: 20px;
 }
-.button{
+.begin-quiz-btn{
     background-color: var(--primary);
+  
     color: white;
     border-radius: 12px;
     outline: none;
-    border: none;
+    border: 1px solid black; 
     padding: 10px 15px;
     font-size: 1.0rem;
+    cursor: pointer;
+}
+.begin-quiz-btn:active{
+    box-shadow: 0 0px var(--secondary);
+    top: 0;
+    border: none;
 }
