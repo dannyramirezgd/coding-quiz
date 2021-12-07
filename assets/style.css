@@ -18,37 +18,29 @@ header{
     flex-wrap: wrap;
     justify-content:center;
 }
-main{
-    display: flex;
-}
-.highscores{
+.scores{
     flex: 1;
     padding: 20px;
-    font-size: 0.8rem;
+    font-size: 15px;
 }
 .timer{
     padding: 20px;
     font-size: 0.8rem;
 }
-.question-block{
+.start{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: auto;
     width: 80%;
     justify-content: center;
+    padding: 25px;
 }
-.question-block h2{
-    color: black;
-    padding: 20px;
-    width: 100%;
-    font-size: 50px;
+.start h1{
+    margin: 20px;
 }
-.question {
-    margin: auto;
-}
-.instructions{
-    padding: 20px;
+.start p{
+    margin: 20px;
 }
 .begin-quiz-btn{
     background-color: var(--primary);

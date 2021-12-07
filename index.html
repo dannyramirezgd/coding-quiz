@@ -5,28 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <header>
       <!--View High Scores-->
-      <a class="highscores" href="">View High Scores</a>
+      <div class = "scores">
+        <a href="highscores.html">View High Scores</a>
+      </div>
       <!--Timer-->
-      <a class="timer">Timer: 39</a>
+      <div class="timer">Time: <span id="time">0</span></div>
     </header>
     <!--The question-->
-    <main class="question-block">
-      <h2 id="splash-screen" class = "question">Coding Quiz Challenge!</h2>
-      <h2 id = "question"></h2>
-      <p id="instructions" class="instructions">
-        Try to answer coding related questions in a set amount of time. If you
-        answer correctly, you will move on to the next question. However, answer
-        incorrectly and time will be deducted. Click continue in order to begin
-        the quiz and the timer.
+    <div id="start-screen" class="start">
+      <h1>Coding Quiz Challenge</h1>
+      <p>
+        Try to answer the following code-related questions within the time
+        limit. Keep in mind that incorrect answers will penalize your score/time
+        by ten seconds!
       </p>
-      <button class ="begin-quiz-btn" id="begin-quiz-btn">Begin Quiz</button>
-      <ol id="possible-answers" class = "possible-answers"></ol>
-    </main>
+    <button class = "begin-quiz-btn" id="begin-quiz-btn">Begin Quiz</button>
+    </div>
+    <div id="questions" class="hide">
+      <h2 id="question-title"></h2>
+      <div id="possible-answers" class="possible-answers"></div>
+    </div>
     <script src="assets/script.js"></script>
   </body>
 </html>
