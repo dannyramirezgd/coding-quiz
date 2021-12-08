@@ -13,35 +13,14 @@ var beginQuiz = function (){
 var firstQuestion = function(){
     var questionTitleEl = document.createElement("h2");
     questionTitleEl.className = "start";
-    questionTitleEl.textContent = "How many eggs we got?"
+    questionTitleEl.textContent = "Does this work?"
     questions.appendChild(questionTitleEl);
 
     var possibleAnswerEl = document.createElement("button");
     possibleAnswerEl.className ="begin-quiz-btn";
-    possibleAnswerEl.textContent = "Bout a dozen"
+    possibleAnswerEl.textContent = "Looks like it does"
     questions.appendChild(possibleAnswerEl);
     
-    // var questionBlockEl = document.createElement("div");
-    // questionBlockEl.className = "question-block";
-    // questionDocEl.appendChild(questionBlockEl);
-  
-    // questionBlockEl.innerHTML = "<p class = 'question'>How many eggs in a dozen?</p>";
-    // var questionEl = document.createElement("li");
-    // //questionEl.innerHTML = "<a href='#'>12</a>";
-    // possibleAnswersEl.appendChild(questionEl);
-    // questionBlockEl.innerHTML = "<p class = 'question'>How many eggs in a dozen?</p>";
-    // var questionEl = document.createElement("li");
-    // //questionEl.innerHTML = "<a href='#'>5</a>";
-    // possibleAnswersEl.appendChild(questionEl);
-    // questionBlockEl.innerHTML = "<p class = 'question'>How many eggs in a dozen?</p>";
-    // var questionEl = document.createElement("li");
-    // //questionEl.innerHTML = "<a href='#'>7</a>";
-    // possibleAnswersEl.appendChild(questionEl);
-    // questionBlockEl.innerHTML = "<p class = 'question'>How many eggs in a dozen?</p>";
-    // var questionEl = document.createElement("li");
-    // //questionEl.innerHTML = "<a href='#'>18</a>";
-    // possibleAnswersEl.appendChild(questionEl);
-
 
     
 

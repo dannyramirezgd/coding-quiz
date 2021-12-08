@@ -1,7 +1,5 @@
 *{
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 :root{
     --primary: rgb(98, 0, 255);
@@ -12,6 +10,8 @@ body{
     background: white;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 header{
     display: flex;
@@ -41,6 +41,12 @@ header{
 }
 .start p{
     margin: 20px;
+}
+.hide {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;    
 }
 .begin-quiz-btn{
     background-color: var(--primary);
