@@ -1,23 +1,24 @@
 var questionsArr = [
     {
-    title: "How many eggs in a dozen?",
-    choices: ["12","5","2","8"],
-    answer: "12",
+    title: "Which of these is not a JS Data Type?",
+    choices: ["Boolean","String","Inventory","Number"],
+    answer: "Inventory",
     },
     {
-    title: "Who is the coolest",
-    choices: ["me", "Lizzie", "April O'Neil", "Toothless"],
-    answer: "me",
+    title: "What is the use of the isNaN function?",
+    choices: ["returns true if argument is not a number", 
+    "bakes you some Naan bread", "Finds the value of an integer in an array", "Splits up a string by its parts"],
+    answer: "returns true if argument is not a number",
     },
     {
-    title: "",
-    choices: [],
-    answer: "",
+    title: "Which company developed JavaScript",
+    choices: ["Amazon", "Mozilla", "Google", "Netscape"],
+    answer: "Netscape",
     },
     {
-    title: "",
-    choices: [],
-    answer: "",
+    title: "Which of the following is not a looping structure",
+    choices: ["For", "While", "Spin", "Do-While"],
+    answer: "Spin",
     },
 
 ];
@@ -28,23 +29,22 @@ var questions = document.querySelector("#questions");
 var questionTitleEl = document.querySelector("#question-title");
 var choicesEl = document.querySelector("#choice");
 var timerEl = document.querySelector("#time");
+var endQuizEl = document.querySelector("#end-screen");
+var finalScore = document.querySelector("#final-score");
 var currentQuestionIndex = 0;
-
+var timer = 50;
 
 var beginQuiz = function (){
-    
     //hide start screen
     var startScreenEl = document.getElementById("start-screen");
     startScreenEl.setAttribute("class", "hide")
     //unhide question section
     questions.setAttribute("class", "choice");
     //start timer
-    var timer = 51;
-    setInterval(function(){
-        timer--;
-        console.log(timer);
-        timerEl.textContent = timer;
-    }, 1000)
+    
+    timerId = setInterval(timerCountdown, 1000);
+
+    timerEl.textContent = timer;
 
     
     //start first question
@@ -73,19 +73,33 @@ var getQuestion = function(){
    }
 }
 var checkCorrect = function(event){
-    console.log(event.target.textContent)
     //check if the user clicked the correct answer
     if (event.target.textContent !== questionsArr[currentQuestionIndex].answer){
         alert("WRONG!")
-        console.log(event.target)
+        timer -= 15; 
+        if (timer < 0){
+            timer = 0;
+        }
     } else {
         alert("RIGHT")
     }
     currentQuestionIndex++;
+    if (currentQuestionIndex === questionsArr.length){
+        endQuiz();
+    }
+    else{
     getQuestion();
+    }
 }
 var endQuiz = function(){
+    clearInterval(timerId);
+    choicesEl.innerHTML = "";
+    endQuizEl.setAttribute("class","end-screen");
+    finalScore.textContent = timer;
 
 }
-
+var timerCountdown = function (){
+    timer--;
+    timerEl.textContent = timer;
+}
 beginQuizButton.addEventListener("click", beginQuiz);

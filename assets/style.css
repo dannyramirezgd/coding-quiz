@@ -60,15 +60,17 @@ body{
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    flex-direction: column;    
 }
 .begin-quiz-btn{
     background-color: var(--primary);
     color: white;
     border-radius: 12px;
     outline: none;
-    border: 1px solid black; 
-    padding: 10px 15px;
+    border: 5px solid black; 
+    margin: 5px;
+    padding: 10px 45px;
     font-size: 1.0rem;
     cursor: pointer;
 
@@ -96,7 +98,22 @@ body{
     cursor: pointer;
     outline: none;
 }
-
+.end-screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.end-screen h2{
+    margin: 20px;
+}
+.end-screen p{
+    margin: 20px;
+}
+.end-screen p span{
+    font-weight: bolder;
+}
 .possible-answers a:active{
     box-shadow: 0 0px var(--secondary);
     top: 0;
