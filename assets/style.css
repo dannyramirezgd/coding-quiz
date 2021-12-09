@@ -6,13 +6,6 @@
     --secondary: rgb(231, 126, 245);
     --tertiary: rgb(255, 255, 255);
 }
-body{
-    background: white;
-    color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 header{
     display: flex;
     flex-wrap: wrap;
@@ -27,23 +20,44 @@ header{
     padding: 20px;
     font-size: 0.8rem;
 }
+body{
+    background: white;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 .start{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: auto;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     padding: 25px;
 }
 .start h1{
     margin: 20px;
+    width:100%;
 }
 .start p{
-    margin: 20px;
+    width: 100%;
 }
-.hide {
+.hide{
+    display: none;
+}
+.questions{
     display: flex;
+}
+.question-title{
+    margin: 20px;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+}
+.choice {
+    display: flex;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;    
@@ -57,6 +71,7 @@ header{
     padding: 10px 15px;
     font-size: 1.0rem;
     cursor: pointer;
+
 }
 .begin-quiz-btn:active{
     box-shadow: 0 0px var(--secondary);
