@@ -34,6 +34,8 @@ var endQuizEl = document.querySelector("#end-screen");
 var finalScore = document.querySelector("#final-score");
 var finalScoreSubmit = document.querySelector("#submit");
 var goBackEl = document.querySelector("#go-back");
+var loadedScoreboard = document.querySelector("#loaded-scoreboard");
+var viewHighScores = document.querySelector("#view-high-scores")
 var currentQuestionIndex = 0;
 var timer = 50;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -116,10 +118,8 @@ var saveHighScore = function(){
 highScores.push(score);
 localStorage.setItem("highScores", JSON.stringify(highScores));
 window.location.href = "highscores.html";
-}
-var goBack = function (){
-    console.log("trying to go back")
-    window.location.href = "index.html";
+loadHighScore();
+
 }
 beginQuizButton.addEventListener("click", beginQuiz);
 finalScoreSubmit.addEventListener("click" , saveHighScore);

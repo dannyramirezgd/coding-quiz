@@ -11,6 +11,37 @@ header{
     flex-wrap: wrap;
     justify-content:center;
 }
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.scoreboard button {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 12px;
+    outline: none;
+    border: 5px solid black; 
+    margin: 5px;
+    padding: 10px 45px;
+    font-size: 1.0rem;
+    cursor: pointer;
+}
+.scoreboard button:active{
+    box-shadow: 0 0px var(--secondary);
+    top: 0;
+    border: none;
+}
+.scoreboard h1{
+    color: var(--primary);
+    -webkit-text-stroke: 1px black;
+}
+.loaded-scores {
+    list-style: none;
+    justify-self:flex-start;
+}
 .scores{
     flex: 1;
     padding: 20px;
@@ -21,7 +52,7 @@ header{
     font-size: 0.8rem;
 }
 body{
-    background: white;
+    background: rgb(255, 255, 255);
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
