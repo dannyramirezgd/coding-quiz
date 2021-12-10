@@ -22,6 +22,7 @@ var questionsArr = [
     },
 
 ];
+
 var body = document.body;
 var startScreenEl = document.querySelector("#start-screen");
 var beginQuizButton = document.querySelector("#begin-quiz-btn");
@@ -31,8 +32,11 @@ var choicesEl = document.querySelector("#choice");
 var timerEl = document.querySelector("#time");
 var endQuizEl = document.querySelector("#end-screen");
 var finalScore = document.querySelector("#final-score");
+var finalScoreSubmit = document.querySelector("#submit");
+var goBackEl = document.querySelector("#go-back");
 var currentQuestionIndex = 0;
 var timer = 50;
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var beginQuiz = function (){
     //hide start screen
@@ -102,4 +106,20 @@ var timerCountdown = function (){
     timer--;
     timerEl.textContent = timer;
 }
+
+var saveHighScore = function(){
+    var initials = document.getElementById("initials");
+    const score = {
+        score: timer,
+        name: initials.value,
+    };
+highScores.push(score);
+localStorage.setItem("highScores", JSON.stringify(highScores));
+window.location.href = "highscores.html";
+}
+var goBack = function (){
+    console.log("trying to go back")
+    window.location.href = "index.html";
+}
 beginQuizButton.addEventListener("click", beginQuiz);
+finalScoreSubmit.addEventListener("click" , saveHighScore);
