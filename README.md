@@ -13,6 +13,5 @@ Setting up a timer when quiz begins and ending quiz once timer is 0
 - Javascript
 ## Website
 https://dannyramirezgd.github.io/coding-quiz/
-## Screenshot and Recording
-![screenshot](https://github.com/dannyramirezgd/coding-quiz/blob/main/assets/images/screencapture.png "Screenshot of site")
+## Screen Recording
 [![GIF of Password Generator](https://github.com/dannyramirezgd/coding-quiz/blob/main/assets/images/Coding%20Quiz.gif "Screengrab gif of site")
