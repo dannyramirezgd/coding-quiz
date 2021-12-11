@@ -37,7 +37,7 @@ var goBackEl = document.querySelector("#go-back");
 var loadedScoreboard = document.querySelector("#loaded-scoreboard");
 var viewHighScores = document.querySelector("#view-high-scores")
 var currentQuestionIndex = 0;
-var timer = 5;
+var timer = 50;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var beginQuiz = function (){

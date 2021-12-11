@@ -3,7 +3,7 @@
 }
 :root{
     --primary: rgb(98, 0, 255);
-    --secondary: rgb(231, 126, 245);
+    --secondary: rgb(255, 92, 92);
     --tertiary: rgb(255, 255, 255);
 }
 header{
@@ -15,8 +15,16 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     flex-wrap: wrap;
+}
+.scoreboard li {
+    background-color: var(--secondary);
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 5px;
 }
 .scoreboard button {
     background-color: var(--primary);
@@ -40,7 +48,7 @@ header{
 }
 .loaded-scores {
     list-style: none;
-    justify-self:flex-start;
+    padding: 0;
 }
 .scores{
     flex: 1;
