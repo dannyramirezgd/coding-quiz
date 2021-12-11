@@ -36,6 +36,7 @@ var finalScoreSubmit = document.querySelector("#submit");
 var goBackEl = document.querySelector("#go-back");
 var loadedScoreboard = document.querySelector("#loaded-scoreboard");
 var viewHighScores = document.querySelector("#view-high-scores")
+var feedbackEl = document.querySelector("#feedback");
 var currentQuestionIndex = 0;
 var timer = 50;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -79,7 +80,8 @@ var getQuestion = function(){
 var checkCorrect = function(event){
     //check if the user clicked the correct answer
     if (event.target.textContent !== questionsArr[currentQuestionIndex].answer){
-        alert("WRONG!")
+        feedbackEl.textContent = "Incorrect!"
+        feedbackEl.setAttribute("class" , "feedback");
         timer -= 15;
         if(timer < 0){
             timer = 0;
@@ -87,7 +89,8 @@ var checkCorrect = function(event){
             endQuiz();
         } 
     } else {
-        alert("RIGHT")
+        feedbackEl.textContent = "Correct!"
+        feedbackEl.setAttribute("class" , "feedback");
         if(timer < 0){
             timer = 0;
             clearInterval(timerId);
@@ -113,6 +116,10 @@ var endQuiz = function(){
 var timerCountdown = function (){
     timer--;
     timerEl.textContent = timer;
+    if (timer < 0){
+        timer = 0;
+        endQuiz();
+    }
 }
 
 var saveHighScore = function(){
