@@ -57,6 +57,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     padding: 0;
+    align-items: center;
+    justify-content: center;
 }
 .start{
     display: flex;
@@ -68,7 +70,7 @@ body{
     padding: 25px;
 }
 .start h1{
-    margin: 20px;
+    margin: 10px 80px 10px 80px;
     width:100%;
 }
 .start p{
@@ -77,22 +79,15 @@ body{
 .hide{
     display: none;
 }
-.questions{
-    display: flex;
-}
-.question-title{
-    margin: 20px;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-}
 .choice {
     display: flex;
-    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    flex-direction: column;    
+    flex-direction: column;
+    max-width: 50%;
+    margin: auto;
+    text-align: center;
 }
 .begin-quiz-btn{
     background-color: var(--primary);
@@ -101,9 +96,11 @@ body{
     outline: none;
     border: 5px solid black; 
     margin: 5px;
-    padding: 10px 45px;
+    padding: 10px;
     font-size: 1.0rem;
     cursor: pointer;
+    width: 100%;
+
 
 }
 .begin-quiz-btn:active{

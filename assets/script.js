@@ -11,12 +11,12 @@ var questionsArr = [
     answer: "returns true if argument is not a number",
     },
     {
-    title: "Which company developed JavaScript",
+    title: "Which company developed JavaScript?",
     choices: ["Amazon", "Mozilla", "Google", "Netscape"],
     answer: "Netscape",
     },
     {
-    title: "Which of the following is not a looping structure",
+    title: "Which of the following is not a looping structure?",
     choices: ["For", "While", "Spin", "Do-While"],
     answer: "Spin",
     },
@@ -37,19 +37,19 @@ var goBackEl = document.querySelector("#go-back");
 var loadedScoreboard = document.querySelector("#loaded-scoreboard");
 var viewHighScores = document.querySelector("#view-high-scores")
 var currentQuestionIndex = 0;
-var timer = 50;
+var timer = 5;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 var beginQuiz = function (){
     //hide start screen
     var startScreenEl = document.getElementById("start-screen");
     startScreenEl.setAttribute("class", "hide")
+    
     //unhide question section
     questions.setAttribute("class", "choice");
-    //start timer
     
+    //start timer
     timerId = setInterval(timerCountdown, 1000);
-
     timerEl.textContent = timer;
 
     
@@ -63,46 +63,52 @@ var getQuestion = function(){
     //update title with current question
     var questionTitleEl = document.getElementById("question-title");
     questionTitleEl.textContent = currentQuestion.title;
-    questionTitleEl.setAttribute("class", "choice");
-   //remove the previous question
+    //questionTitleEl.setAttribute("class", "choice");
+    //remove the previous question
     choicesEl.innerHTML = "";
-   //loop through the choices
-   for(i=0; i<currentQuestion.choices.length; i++){
+    //loop through the choices
+    for(i=0; i<currentQuestion.choices.length; i++){
        //create a button for each choice
         var choiceBtn = document.createElement("button");
         choiceBtn.textContent = currentQuestion.choices[i]
         choiceBtn.setAttribute("class","begin-quiz-btn");
         choiceBtn.addEventListener("click", checkCorrect);
-
         choicesEl.appendChild(choiceBtn);
-
    }
 }
 var checkCorrect = function(event){
     //check if the user clicked the correct answer
     if (event.target.textContent !== questionsArr[currentQuestionIndex].answer){
         alert("WRONG!")
-        timer -= 15; 
-        if (timer < 0){
+        timer -= 15;
+        if(timer < 0){
             timer = 0;
-        }
+            clearInterval(timerId);
+            endQuiz();
+        } 
     } else {
         alert("RIGHT")
+        if(timer < 0){
+            timer = 0;
+            clearInterval(timerId);
+            endQuiz();
+        } 
     }
     currentQuestionIndex++;
     if (currentQuestionIndex === questionsArr.length){
         endQuiz();
-    }
-    else{
+        questionTitleEl.innerHTML = "";
+    }else{
     getQuestion();
     }
 }
 var endQuiz = function(){
     clearInterval(timerId);
-    choicesEl.innerHTML = "";
+    choicesEl.setAttribute("class" , "hide");
+    questionTitleEl.setAttribute("class" , "hide");
     endQuizEl.setAttribute("class","end-screen");
     finalScore.textContent = timer;
-
+    timerEl.textContent = timer;
 }
 var timerCountdown = function (){
     timer--;
@@ -119,7 +125,7 @@ highScores.push(score);
 localStorage.setItem("highScores", JSON.stringify(highScores));
 window.location.href = "highscores.html";
 loadHighScore();
-
 }
+
 beginQuizButton.addEventListener("click", beginQuiz);
 finalScoreSubmit.addEventListener("click" , saveHighScore);
