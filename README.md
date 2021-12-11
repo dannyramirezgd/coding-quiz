@@ -14,4 +14,4 @@ Setting up a timer when quiz begins and ending quiz once timer is 0
 ## Website
 https://dannyramirezgd.github.io/coding-quiz/
 ## Screenshot
-![screenshot](https://github.com/dannyramirez/coding-quiz/blob/main/assets/images/screencapture.png "Screenshot of site")
+![screenshot](https://github.com/dannyramirezgd/coding-quiz/blob/main/assets/images/screencapture.png "Screenshot of site")
