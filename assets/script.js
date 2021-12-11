@@ -37,6 +37,7 @@ var goBackEl = document.querySelector("#go-back");
 var loadedScoreboard = document.querySelector("#loaded-scoreboard");
 var viewHighScores = document.querySelector("#view-high-scores")
 var feedbackEl = document.querySelector("#feedback");
+var enterKeyEl = document.querySelector("#initials");
 var currentQuestionIndex = 0;
 var timer = 50;
 var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -112,6 +113,7 @@ var endQuiz = function(){
     endQuizEl.setAttribute("class","end-screen");
     finalScore.textContent = timer;
     timerEl.textContent = timer;
+    checkForEnter();
 }
 var timerCountdown = function (){
     timer--;
@@ -132,6 +134,13 @@ highScores.push(score);
 localStorage.setItem("highScores", JSON.stringify(highScores));
 window.location.href = "highscores.html";
 loadHighScore();
+}
+var checkForEnter = function (event){
+document.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        saveHighScore();
+    }
+});      
 }
 
 beginQuizButton.addEventListener("click", beginQuiz);

@@ -160,6 +160,6 @@ body{
 }
 .feedback{
     color: black;
-    margin-top: 20px;
     font-size: 50px;
+    text-align: center;
 }
